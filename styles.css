@@ -10,15 +10,18 @@
 }
 
 .screen{
-  border: 1px solid black;
+  border: 2px solid black;
   display: inline-block;
   width: 90%;
   height: 60;
   margin-top: 15;
+  font-size: 30px;
+  font-family: 'Acme', sans-serif;
+  line-height: 55px
 }
 .number{
   display: inline-block;
-  border: 1px solid red;
+  border: 2px solid black;
   padding: 30px;
   margin-left: 5px;
   margin-bottom: 3px;
@@ -26,7 +29,7 @@
 
 .operation{
   display: inline-block;
-  border: 1px solid red;
+  border: 2px solid black;
   padding: 25px 30px;
   margin-left: 5px;
   margin-bottom: 0px;
@@ -34,9 +37,10 @@
 
 .option{
   display: inline-block;
-  border: 1px solid red;
+  border: 2px solid black;
   padding: 20 35;
-  margin: 6px 3px;
+  margin-bottom: 17px;
+  margin-top: 5px;
 }
 
 .row1{
@@ -55,7 +59,16 @@
   text-align: center;
 }
 
+.zero{
+  margin: 0px 5px;
+}
+
 .operations{
   text-align: center;
   margin: 15px;
+}
+
+.button{
+  font-size: 20px;
+  font-family: 'Acme', sans-serif;
 }
