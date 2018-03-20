@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+
 .main{
   text-align: center;
   position: relative;
@@ -6,69 +8,89 @@
 
 .calculator{
   display: inline-block;
-  border: 1px solid black;
+  border: 10px solid #434343;
+  background-color: #2a1313;
+  border-radius: 5px;
+  box-shadow: 0px 0px 40px;
 }
 
 .screen{
-  border: 2px solid black;
+  border: 2px solid #434343;
   display: inline-block;
+  background-color: #434343;
   width: 90%;
-  height: 60;
-  margin-top: 15;
+  height: 80px;
+  margin-top: 20px;
   font-size: 30px;
-  font-family: 'Acme', sans-serif;
-  line-height: 55px
+  font-family: 'Orbitron', sans-serif;
+  line-height: 75px;
+  color: white;
 }
 .number{
   display: inline-block;
-  border: 2px solid black;
-  padding: 30px;
-  margin-left: 5px;
+  border: 2px solid #434343;
+  padding: 20px 30px;
   margin-bottom: 3px;
 }
 
+.number:hover{
+  background-color: #2197ff;
+}
+
 .operation{
+  background-color: #434343;
   display: inline-block;
-  border: 2px solid black;
-  padding: 25px 30px;
-  margin-left: 5px;
-  margin-bottom: 0px;
+  border: 2px solid #434343;
+  padding: 20px 30px;
+  transition: 0.4s
+}
+
+.operation:hover{
+  background-color: #c78a19;
 }
 
 .option{
   display: inline-block;
-  border: 2px solid black;
+  border: 2px solid #434343;
   padding: 20 35;
   margin-bottom: 17px;
-  margin-top: 5px;
+  margin-top: 1px;
 }
 
-.row1{
+.row1,.row2,.row3,.lastrow{
   text-align: center;
-}
-
-.row2{
-  text-align: center;
-}
-
-.row3{
-  text-align: center;
-}
-
-.lastrow{
-  text-align: center;
-}
-
-.zero{
-  margin: 0px 5px;
 }
 
 .operations{
   text-align: center;
-  margin: 15px;
+  margin-top: 20px;
+  margin-bottom: 3px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .button{
-  font-size: 20px;
-  font-family: 'Acme', sans-serif;
+  font-size: 25px;
+  font-family: 'Orbitron', sans-serif;
+  width: 15px;
+  height: 25px;
+  color: white;
+  transition: 0.4s;
+  background-color: #434343;
+}
+
+.button:hover{
+  box-shadow: 0px 0px 30px white;
+}
+
+.clear{
+  width: 89px;
+}
+
+.backspace:hover,.clear:hover{
+  background-color: #ff2020;
+}
+
+.equals{
+  width: 6px;
 }
