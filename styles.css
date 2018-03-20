@@ -1,0 +1,61 @@
+.main{
+  text-align: center;
+  position: relative;
+  top: 125;
+}
+
+.calculator{
+  display: inline-block;
+  border: 1px solid black;
+}
+
+.screen{
+  border: 1px solid black;
+  display: inline-block;
+  width: 90%;
+  height: 60;
+  margin-top: 15;
+}
+.number{
+  display: inline-block;
+  border: 1px solid red;
+  padding: 30px;
+  margin-left: 5px;
+  margin-bottom: 3px;
+}
+
+.operation{
+  display: inline-block;
+  border: 1px solid red;
+  padding: 25px 30px;
+  margin-left: 5px;
+  margin-bottom: 0px;
+}
+
+.option{
+  display: inline-block;
+  border: 1px solid red;
+  padding: 20 35;
+  margin: 6px 3px;
+}
+
+.row1{
+  text-align: center;
+}
+
+.row2{
+  text-align: center;
+}
+
+.row3{
+  text-align: center;
+}
+
+.lastrow{
+  text-align: center;
+}
+
+.operations{
+  text-align: center;
+  margin: 15px;
+}
