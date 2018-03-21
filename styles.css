@@ -89,7 +89,7 @@ html{
   box-shadow: 0px 0px 30px white;
 }
 
-.clear{
+.equals{
   width: 89px;
 }
 
@@ -97,8 +97,9 @@ html{
   background-color: #ff2020;
 }
 
-.equals{
+.clear{
   width: 6px;
+  margin-bottom: 1px;
 }
 
 .equals:hover{
