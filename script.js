@@ -115,7 +115,7 @@ function mouseInput(){
 function keyBoardInput(){
 
   let display = document.querySelector('.screen');
-  let digits = "1 2 3 4 5 6 7 8 9";
+  let digits = "1 2 3 4 5 6 7 8 9 + -";
 
   window.addEventListener('keydown', function(e){
             let temp_input = e.key ;
