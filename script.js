@@ -30,20 +30,20 @@ function input(){
       buttons.forEach(function(button){
             button.onclick = function(e){
                 audio.play();
-                let temp = e.target.innerHTML;
-                display.innerHTML = temp;
+                let temp_input = e.target.innerHTML;
 
-                if( temp in operations || temp == '=' ){
-                    if (temp != '=') {
+                if( temp_input in operations || temp_input == '=' ){
+                    display.innerHTML = temp_input;
+                    if (temp_input != '=') {
                         if(last_operation){
                           operations[last_operation](+curr_num,+prev_num)
                           prev_num = current_val;
                           curr_num = '';
-                          last_operation = temp;
+                          last_operation = temp_input;
                           display.innerHTML = current_val;
                         }
                         else {
-                          last_operation = temp;
+                          last_operation = temp_input;
                           start= 'start';
                         }
                     }
@@ -63,13 +63,28 @@ function input(){
                 }
                 else {
                     if (start) {
-                      curr_num+= temp;
-                      display.innerHTML = curr_num;
+
+                        if (temp_input == 'CE' && curr_num != '') {
+                            curr_num = curr_num.slice(0,-1);
+                            display.innerHTML = curr_num;
+                        }
+                        else if( (temp_input!='.'  || curr_num.indexOf('.') == -1 ) && temp_input != 'CE' ){
+                            curr_num+= temp_input;
+                            display.innerHTML = curr_num;
+                        }
+
 
                     }
                     else {
-                      prev_num+=temp;
-                      display.innerHTML = prev_num;
+                        if (temp_input == 'CE' && curr_num != '' ) {
+                            prev_num = prev_num.slice(0,-1);
+                            display.innerHTML = prev_num;
+                        }
+                        else if( (temp_input!='.' || prev_num.indexOf('.') == -1) && temp_input != 'CE' ){
+                            prev_num+=temp_input;
+                            display.innerHTML = prev_num;
+                        }
+
                     }
                 }
 
@@ -79,8 +94,9 @@ function input(){
 input();
 clear();
 
-let operations = {"+": (a,b)=> ( current_val =a+b),
-                  "-": (a,b)=> ( current_val =a-b),
-                  "x": function(a,b){if(current_val == 0){ current_val = 1;}; current_val =a*b;} ,
-                  "/": function(a,b){if(a == 0) return; current_val=a/b;}
+let operations = {"+": (a,b)=> ( current_val =(a+b).toFixed(2)),
+                  "-": (a,b)=> ( current_val =(a-b).toFixed(2)),
+                  "x": (a,b)=> ( current_val =(a*b).toFixed(2)),
+                  "/": (a,b)=> ( current_val =(a/b).toFixed(2)),
+                  "%": (a,b)=> ( current_val =(a%b).toFixed(2))
                   }
