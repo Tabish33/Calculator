@@ -22,8 +22,8 @@ function clear(){
       }
 
       window.addEventListener('keydown', function(e){
-          audio.play();
-          if (e.key == 'c'){
+          if (e.key == 'c' || e.key == 'C' ){
+              audio.play();
               current_val = 0;
               last_operation;  start = '';
               prev_num ='' ; curr_num ='';
@@ -118,10 +118,10 @@ function keyBoardInput(){
   let digits = "1 2 3 4 5 6 7 8 9";
 
   window.addEventListener('keydown', function(e){
-            audio.play();
             let temp_input = e.key ;
 
             if( temp_input in operations  && prev_num!= '' ){
+                audio.play();
                 display.innerHTML = temp_input;
                 if (temp_input != 'Enter') {
                     if(last_operation){
@@ -162,12 +162,14 @@ function keyBoardInput(){
                 if (start) {
 
                     if (temp_input == 'Backspace' && curr_num != '') {
+                        audio.play();
                         if(last_operation in operations) last_operation="";
                         curr_num = curr_num.slice(0,-1);
                         display.innerHTML = curr_num;
                     }
                     else if( temp_input!='.'  || curr_num.indexOf('.') == -1 ){
                         if(digits.indexOf(temp_input) != -1){
+                          audio.play();
                           curr_num+= temp_input;
                           display.innerHTML = curr_num;
                         }
@@ -177,12 +179,14 @@ function keyBoardInput(){
                 }
                 else {
                     if (temp_input == 'Backspace') {
+                        audio.play();
                         if(last_operation in operations) last_operation="";
                         prev_num = prev_num.slice(0,-1);
                         display.innerHTML = prev_num;
                     }
                     else if( temp_input!='.' || prev_num.indexOf('.') == -1 ){
                         if(digits.indexOf(temp_input) != -1){
+                          audio.play();
                           prev_num+= temp_input;
                           display.innerHTML = prev_num;
                         }

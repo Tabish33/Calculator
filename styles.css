@@ -41,6 +41,7 @@ html{
 
 .number:hover{
   background-color: #2197ff;
+  border: 2px solid #2197ff;
 }
 
 .operation{
@@ -53,6 +54,7 @@ html{
 
 .operation:hover{
   background-color: #c78a19;
+  border: 2px solid #c78a19;
 }
 
 .option{
@@ -85,9 +87,9 @@ html{
   background-color: #434343;
 }
 
-.button:hover{
+/*.button:hover{
   box-shadow: 0px 0px 30px white;
-}
+}*/
 
 .equals{
   width: 89px;
@@ -95,6 +97,7 @@ html{
 
 .backspace:hover,.clear:hover{
   background-color: #ff2020;
+  border: 2px solid #ff2020;
 }
 
 .clear{
@@ -104,4 +107,5 @@ html{
 
 .equals:hover{
   background-color: #2197ff;
+  border: 2px solid #2197ff;
 }
