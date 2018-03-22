@@ -48,13 +48,16 @@ function mouseInput(){
                 audio.play();
                 let temp_input = e.target.innerHTML;
 
-                if( temp_input in operations && prev_num!= '' ) {  //prev_num check for alowing negative number input
-                    display.innerHTML = temp_input;                //negative number input
-                    if (temp_input != '=') {
+                if( temp_input in operations ) {
+                    display.innerHTML = temp_input;
+                    if ( prev_num == '' && temp_input == '-') {      //negative number input
+                      prev_num+=temp_input;
+                    }
+                    else if (temp_input != '=') {
                         if(last_operation){
-                            if (curr_num == "") {
-                                last_operation = temp_input
-                                display.innerHTML = last_operation;// for operation change
+                            if (curr_num == "") {         // for operation change
+                                last_operation = temp_input;
+                                display.innerHTML = last_operation;
                             }
                             else{
                                 operations[last_operation](+curr_num,+prev_num)
@@ -130,10 +133,14 @@ function keyBoardInput(){
   window.addEventListener('keydown', function(e){
             let temp_input = e.key ;
 
-            if( temp_input in operations  && prev_num!= '' ){
+            if( temp_input in operations ){
                 audio.play();
-                display.innerHTML = temp_input;
-                if (temp_input != 'Enter') {
+
+                if ( prev_num == '' && temp_input == '-') {
+                  prev_num+=temp_input;
+                  display.innerHTML = temp_input;
+                }
+                else if (temp_input != 'Enter') {
                     if(last_operation){
                           if (curr_num == "") {           // for operation change
                             last_operation = temp_input
