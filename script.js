@@ -213,7 +213,7 @@ keyBoardInput();
 let operations = {"+": (a,b)=> ( current_val =(a+b).toFixed(1)),
                   "-": (a,b)=> ( current_val =(a-b).toFixed(1)),
                   "x": (a,b)=> ( current_val =(a*b).toFixed(1)),
-                  "/": (a,b)=> ( current_val =(a/b).toFixed(1),
+                  "/": (a,b)=> ( current_val =(a/b).toFixed(1)),
                   "%": (a,b)=> ( current_val =(a%b).toFixed(1)),
                   "=": null,
                   "Enter" : null
